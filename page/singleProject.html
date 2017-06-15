@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <title>LessAppProject</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <!--<link rel="shortcut icon" href="images/common/favicon.ico" type="image/x-icon" />-->
+    <link rel="stylesheet" href="../plugin/font-awesome/css/font-awesome.min.css"/>
+    <!--<link rel="stylesheet/less" href="less/style.less"/>-->
+    <!--<script src="../lib/less.min.js"></script>-->
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div class="expand-wrapper" id="expand-contains"></div>
+<div class="expand-box" id="expand-box">
+    <img class="expand-img" src="images/content/large-1.jpg" alt=""/>
+
+    <div class="loading">
+        <img class="loading-img" src="images/common/loading.gif" alt=""/>
+    </div>
+    <span class="expand-close">x</span>
+</div>
+<div class="full-contains">
+    <div class="header" id="header">
+
+        <div class="shopping-outer" id="shoppingList">
+            <div class="shopping-list m-t-b-15">
+                <div class="shopping-con">
+                    <a href="" class="shop-img"><img src="images/content/shoppingCartProductImage-1.jpg" alt=""/></a>
+
+                    <div class="shop-info-outer">
+                        <a href="" class="shop-name">产品一</a>
+
+                        <div class="shop-btn-info">
+                            <input type="text" class="small-input"/>
+                            <span class="price">$25</span>
+                            <a href="" class="lin-small black-btn f-r">x</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="shopping-con">
+                    <a href="" class="shop-img"><img src="images/content/shoppingCartProductImage-2.jpg" alt=""/></a>
+
+                    <div class="shop-info-outer">
+                        <a href="" class="shop-name">产品一</a>
+
+                        <div class="shop-btn-info">
+                            <input type="text" class="small-input"/>
+                            <span class="price">$25</span>
+                            <a href="" class="lin-small black-btn f-r">x</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="shopping-con">
+                    <a href="" class="shop-img"><img src="images/content/shoppingCartProductImage-3.jpg" alt=""/></a>
+
+                    <div class="shop-info-outer">
+                        <a href="" class="shop-name">产品一</a>
+
+                        <div class="shop-btn-info">
+                            <input type="text" class="small-input"/>
+                            <span class="price">$25</span>
+                            <a href="" class="lin-small black-btn f-r">x</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="line-dark"/>
+            <div class="shop-outer m-t-b-15">
+                <div class="con-outer">
+                    <a class="white-color" href="">商品数量: 3</a>
+                </div>
+                <div class="con-outer">
+                    <a class="white-color f-r" href="">商品总价: $235</a>
+                </div>
+            </div>
+            <hr class="line-dark"/>
+            <div class="shop-outer m-t-b-15">
+                <div class="con-outer">
+                    <a class="link-btn white-btn" href="">清空</a>
+                </div>
+                <div class="con-outer">
+                    <a class="link-btn black-btn f-r" href="">检出</a>
+                </div>
+            </div>
+            <hr class="line-dark"/>
+        </div>
+        <div class="menu-outer" id="menuList">
+            <ul class="menu-list">
+                <li class="list-con">
+                    <a class="menu-active" href="index.html">主页</a>
+                </li>
+                <li class="list-con">
+                    <a href="typography.html">关于</a>
+                </li>
+                <li class="list-con">
+                    <a href="FAQ.html">常见问题</a>
+                </li>
+                <li class="list-con">
+                    <a href="404.html">404页面</a>
+                </li>
+                <li class="list-con">
+                    <a href="register.html">注册</a>
+                </li>
+                <li class="list-con">
+                    <a href="recover.html">恢复密码</a>
+                </li>
+                <li class="list-con">
+                    <a href="login.html">登录</a>
+                </li>
+                <li class="list-con">
+                    <a href="advancedSearch.html">高级搜索</a>
+                </li>
+                <li class="list-con">
+                    <a href="singleProduct.html">单个产品</a>
+                </li>
+                <li class="list-con">
+                    <a href="checkout.html">检出</a>
+                </li>
+                <li class="list-con">
+                    <a href="portfolioOneColumn.html">单个组合</a>
+                </li>
+                <li class="list-con">
+                    <a href="portfolioTwoColumns.html">双排组合</a>
+                </li>
+                <li class="list-con">
+                    <a href="portfolioOneColumnFilter.html">面包屑筛选单个组合</a>
+                </li>
+                <li class="list-con">
+                    <a href="portfolioTwoColumnsFilter.html">面包屑筛选双排组合</a>
+                </li>
+                <li class="list-con">
+                    <a href="singleProject.html">单个项目组合</a>
+                </li>
+                <li class="list-con">
+                    <a href="blog.html">博客</a>
+                </li>
+                <li class="list-con">
+                    <a href="singlePost.html">单个帖子</a>
+                </li>
+                <li class="list-con">
+                    <a href="contact.html">联系我们</a>
+                </li>
+            </ul>
+            <hr class="line-dark m-l-r-15"/>
+        </div>
+        <div class="head-sidebar">
+            <a href="login.html" class="login-btn"><i class="fa fa-user"></i></a>
+            <a href="javascript:mainObj.showShopList()" class="shopping-btn"><i class="fa fa-cart-plus"></i></a>
+            <a href="javascript:mainObj.showMenuList()" class="menu-btn"></a>
+        </div>
+        <div class="spot"></div>
+        <a href="" class="main-icon"><img src="images/common/logo.png" alt=""/></a>
+
+    </div>
+    <div class="content">
+        <hr class="line margin-bottom-15"/>
+        <h3>Single Project Page</h3>
+        <hr class="line m-t-b-25"/>
+        <div class="portfolio-wrapper margin-top-20">
+            <img class="portfolio-img portfolio-border" id="single-img" src="images/content/small-1-1.jpg" alt=""/>
+
+            <div class="portfolio-con no-bg">
+                <p class="margin-bottom-15">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit
+                    quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor
+                    repellendus.</p>
+
+                <p class="margin-bottom-15">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus
+                    saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
+            </div>
+        </div>
+        <hr class="line m-t-b-15"/>
+        <h5 class="no-bold">Project details:</h5>
+        <table class="table-style m-t-b-15">
+            <thead>
+            <tr>
+                <th>Number</th>
+                <th>Technologies</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>HTML/CSS</td>
+                <td><i class="fa fa-check black-color"></i></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>PHP</td>
+                <td><i class="fa fa-check black-color"></i></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>JavaScript</td>
+                <td><i class="fa fa-check black-color"></i></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Photoshop</td>
+                <td><i class="fa fa-check black-color"></i></td>
+            </tr>
+            </tbody>
+        </table>
+        <hr class="line m-t-b-25"/>
+        <div class="portfolio-btn-outer">
+            <a href="images/content/large-1.jpg" id="expand" class="portfolio-btn f-l expand"><i
+                    class="fa fa-search-plus"></i> expand</a>
+            <a href="" class="portfolio-btn f-r">details <i class="fa fa-link"></i></a>
+        </div>
+    </div>
+    <div class="footer" id="footer">
+        <div class="spot"></div>
+        <p class="copyright">Copyright © 2015 xxx 版权所有</p>
+    </div>
+</div>
+</body>
+<script src="../plugin/jquery/jquery.min.js"></script>
+<script src="../lib/require.js" data-main="js/main"></script>
+<script>
+    $(function () {
+        /*通过链接传过来的图片名字来显示当前页面的图片*/
+        var curUrl = location.href;
+        if (curUrl.indexOf('?') > 0) {
+            var curImg = curUrl.split('?')[1];
+            $('#single-img').attr('src', 'images/content/' + curImg + '.jpg');
+            $('#expand').attr('href', 'images/content/large' + curImg.substring(curImg.lastIndexOf('-')) + '.jpg');
+        }
+    });
+</script>
+</html>

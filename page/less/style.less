@@ -1,0 +1,1114 @@
+@import "skins/default";
+
+/*---------------------变量 start----------------------*/
+@img-url: "../images";
+@small-font: .8em;
+@xsmall-font: .5em;
+@bottom-instance: 25px;
+@small-instance: 10px;
+@ellips-max-width: 40px;
+/*function start*/
+.darken(@colorValue) {
+  background-color: rgba(0, 0, 0,@colorValue);
+}
+
+.border-radius(@size:6px) {
+  -moz-border-radius: @size;
+  -webkit-border-radius: @size;
+  border-radius: @size;
+}
+
+/*function end*/
+/*----------------------变量 end----------------------*/
+/*----------------------common start----------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Consolas, "Microsoft Yahei";
+}
+
+body {
+  background-color: @body-color;
+  font-size: 12px;
+  color: #666;
+}
+
+ul, li {
+  display: block;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h4, h3, h5 {
+  color: @black-color;
+}
+
+.width-percent-100 {
+  width: 100%;
+}
+.no-bg {
+  background-color: transparent !important;
+}
+.opacity-2{
+  opacity: .2;
+  transition: opacity 1s;
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+}
+.margin-left-15 {
+  margin-left: 15px;
+}
+
+.margin-bottom-15 {
+  margin-bottom: 15px;
+}
+.margin-bottom-5 {
+  margin-bottom: 5px;
+}
+.margin-top-5 {
+  margin-top: 5px;
+}
+.margin-bottom-25 {
+  margin-bottom: 25px;
+}
+.margin-top-25 {
+  margin-top: 25px;
+}
+.m-l-15 {
+  margin-left: -15px;
+}
+
+.m-l-r-15 {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+
+.m-l-r-10 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.m-t-b-15 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.m-t-b-25 {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.p-t-b-10 {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.f-l {
+  float: left;
+}
+
+.f-r {
+  float: right;
+}
+
+.display-block {
+  display: block;
+}
+
+.position-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+.small-input {
+  width: 25px;
+  height: 24px;
+  .border-radius(3px);
+}
+
+.badge {
+  .border-radius(3px);
+  padding: 6px 12px;
+  color: @white-color;
+  .darken(0.12);
+}
+
+.no-bold {
+  font-weight: normal;
+  font-size: .9rem;
+}
+
+input[type="text"], input[type="password"], textarea {
+  padding: 5px 10px;
+  background-color: #f3f3f3;
+  color: #000;
+  border: 1px solid #f0f0f0;
+  outline: none;
+  box-sizing: border-box;
+  transition: background-color 0.3s;
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, .drop-outer > .drop-text-active {
+  background-color: #f6f6f6 !important;
+  border-color: #e9e9e9;
+  transition: background-color 0.3s;
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+}
+
+/*input start*/
+.input-group {
+  position: relative;
+  margin-bottom: @bottom-instance;
+  .group-input {
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+  }
+  .input-icon {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 1.3rem;
+    color: @search-icon-color;
+  }
+}
+
+/*input end*/
+/*select start*/
+.block-percent-100 {
+  display: block;
+  width: 100%;
+}
+
+.drop-outer {
+  width: 100%;
+  .drop-text {
+    position: relative;
+    display: block;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 10px;
+    background-color: #f3f3f3;
+    border: 1px solid #f0f0f0;
+    cursor: pointer;
+    .drop-icon {
+      .input-group .input-icon;
+      right: 7px;
+    }
+  }
+  .drop-item-outer {
+    display: none;
+    border-left: 1px solid #e9e9e9;
+    border-right: 1px solid #e9e9e9;
+    max-height: 75px;
+    overflow: auto;
+    .drop-item {
+      height: 24px;
+      line-height: 24px;
+      padding: 0 10px;
+      background-color: @white-color;
+      border-bottom: 1px solid #e9e9e9;
+      cursor: pointer;
+    }
+  }
+}
+
+/*select end*/
+.line {
+  border: 2px solid @line-color;
+}
+.small-line{
+  border:1px solid @line-color;
+}
+.line-dark {
+  border: 2px solid @line-dark-color;
+}
+
+//头部和底部共用的
+.head-footer-distance {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 15px;
+  background-color: @bg-color;
+}
+
+/*文本省略符号*/
+.text-ellips {
+  max-width: @ellips-max-width;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.float-percent-50 {
+  float: left;
+  width: 50%;
+}
+
+/*清除浮动 start*/
+.clear-float {
+  overflow: auto;
+  zoom: 1;
+  *zoom: 1;
+}
+
+/*清除浮动 end*/
+.black-color {
+  color: @black-color;
+}
+
+.white-color {
+  color: @white-color;
+}
+
+.black-btn {
+  background-color: @black-color;
+  color: @white-color;
+}
+
+.white-btn {
+  background-color: @white-color;
+  color: @black-color;
+}
+
+.link-btn {
+  display: inline-block;
+  min-width: 90px;
+  height: 30px;
+  line-height: 30px;
+  .border-radius(6px);
+  text-align: center;
+  font-size: @xsmall-font;
+}
+
+.lin-small {
+  display: inline-block;
+  padding: 5px 10px 8px 10px;
+  .border-radius(6px);
+  font-size: @xsmall-font;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 15px;
+  .border-radius(6px);
+  font-size: @xsmall-font;
+  color: @white-color;
+}
+
+.head-content {
+  display: none;
+  padding-top: 4px;
+  background-color: @bg-color;
+}
+
+/*----------------------common end----------------------*/
+/*----------------------header start----------------------*/
+/*.......菜单 start.......*/
+.menu-outer {
+  .head-content;
+}
+
+.menu-list {
+  .clear-float;
+  margin: 10px;
+  .list-con {
+    @media all and (min-width: 419px) {
+      .float-percent-50;
+    }
+    box-sizing: border-box;
+    padding: 10px 5px;
+    a {
+      display: block;
+      line-height: 35px;
+      height: 35px;
+      .border-radius(6px);
+      padding-left: 10px;
+      .white-btn;
+    }
+    .menu-active {
+      .black-btn;
+    }
+  }
+}
+
+/*.......菜单 end.......*/
+/*.......购物车 end.......*/
+.shopping-outer {
+  .head-content;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.shopping-list {
+  .shopping-con {
+    .clear-float;
+    margin-bottom: 15px;
+    .shop-img {
+      float: left;
+      img {
+        width: 60px;
+        height: 60px;
+        .border-radius(6px);
+      }
+    }
+    .shop-info-outer {
+      margin-left: 80px;
+      padding-top: 5px;
+      .shop-btn-info {
+        margin-top: 5px;
+      }
+    }
+    .shop-name {
+      margin-top: 5px;
+      color: @white-color;
+    }
+    .checkout-name {
+      color: @black-color;
+    }
+    .shop-input {
+      .small-input;
+    }
+    .price {
+      .badge;
+      margin-left: 8px;
+    }
+    .price-no-radius {
+      .border-radius(0);
+      background-color: #f9f9f9;
+      color: @black-color;
+    }
+  }
+}
+
+.no-radius {
+  .border-radius(0) !important;
+}
+
+.shop-outer {
+  .clear-float;
+  .con-outer {
+    .float-percent-50;
+  }
+}
+
+/*.......购物车 end.......*/
+.full-contains {
+  padding: 30px 20px;
+}
+
+.header {
+  background-color: @white-color;
+}
+
+.head-sidebar {
+  .head-footer-distance;
+  .login-btn, .shopping-btn {
+    float: left;
+    color: @white-color;
+    margin-right: 15px;
+    font-size: 25px;
+  }
+  .menu-btn {
+    float: right;
+    width: 24px;
+    height: 18px;
+    background: url("@{img-url}/common/mainMenuButtonBg.png") no-repeat;
+    margin-top: 16px;
+  }
+  &:after {
+    content: '';
+    clear: both;
+  }
+}
+
+.spot {
+  height: 6px;
+  background: @white-color url("@{img-url}/skins/default/headerFooterDecoBg.png") center 0 repeat-x;
+}
+
+.main-icon {
+  display: block;
+  width: 165px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 55px;
+  color: @main-icon-color;
+  margin-top: -8px;
+  padding:0 5px 15px 5px;
+}
+
+/*----------------------header end----------------------*/
+/*----------------------content start----------------------*/
+.content {
+  padding: 0 15px 15px;
+  background-color: @white-color;
+}
+
+/*----------------------Slider css start----------------------*/
+.sliderOuterWrapper {
+  position: relative;
+  overflow: visible;
+  .sliderWrapper {
+    overflow: hidden;
+  }
+  .nivoSlider {
+    position: relative;
+    overflow: hidden;
+    background: @white-color #fff url("@{img-url}/images/common/loading.gif") no-repeat 50% 50%;
+  }
+  .nivo-main-image {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+  }
+  .nivoSlider a.nivo-imageLink {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    z-index: 6;
+    display: none;
+  }
+  .nivo-slice {
+    display: block;
+    position: absolute;
+    z-index: 5;
+    height: 100%;
+    top: 0;
+  }
+  .nivo-box {
+    display: block;
+    position: absolute;
+    z-index: 5;
+    overflow: hidden;
+  }
+  .nivo-box img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .nivoSlider img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+    width: 100%;
+    height: auto;
+    max-width: none;
+  }
+  .nivoSlider a {
+    border: 0;
+  }
+  .nivo-controlNav {
+    display: none;
+  }
+  .nivo-directionNav {
+    display: none;
+  }
+  .nivo-directionNav a {
+  }
+  .mainSlider:hover .nivo-directionNav a {
+  }
+  a.nivo-nextNav {
+  }
+  a.nivo-nextNav:hover {
+  }
+  a.nivo-prevNav {
+  }
+  a.nivo-prevNav:hover {
+  }
+  /*----------------------button start----------------------*/
+  .sliderControl {
+    position: absolute;
+    top: 50%;
+    margin-top: -24px;
+    color: @white-color;
+    background-color: @bg-color;
+    z-index: 9999;
+    @media all and (min-width: 600px) {
+      padding: 20px;
+      font-size: 25px;
+    }
+    @media all and (max-width: 599px) {
+      padding: 10px;
+      font-size: 16px;
+    }
+  }
+  .previousSlideButton {
+    left: -20px;
+  }
+  .nextSlideButton {
+    right: -20px;
+  }
+  /*----------------------button end----------------------*/
+}
+
+/*----------------------Slider css end----------------------*/
+.more {
+  float: right;
+  color: @bg-color;
+  font-size: @small-font;
+}
+
+.more:hover {
+  text-decoration: underline;
+}
+
+.h4-title {
+  font-size: @small-font;
+  margin-bottom: @bottom-instance;
+}
+
+.product-list {
+  .clear-float;
+  .m-l-15;
+  .product-outer {
+    .float-percent-50;
+  }
+  .outer-con {
+    .margin-left-15;
+    img {
+      width: 100%;
+    }
+  }
+  .product-info {
+    margin: 10px;
+    padding: 0 5px;
+  }
+}
+
+.buy-info-h6 {
+  margin-bottom: @small-instance;
+  text-align: center;
+  font-size: @xsmall-font;
+  color: @font-color;
+}
+
+.buy-link-btn {
+  text-align: center;
+  display: block;
+  background-color: @black-color;
+  color: @white-color;
+  padding: 5px 0;
+  .border-radius(6px);
+  font-size: @xsmall-font;
+  text-decoration: none;
+}
+
+.question-item {
+  padding: 8px;
+  background-color: @question-item-color;
+  display: block;
+  margin-top: @bottom-instance;
+  i {
+    font-size: 20px;
+    color: @bg-color;
+  }
+  span {
+    color: @font-color;
+    vertical-align: super;
+  }
+}
+
+.question-list .question-result {
+  display: none;
+  padding: 10px;
+  border: 1px solid @line-color;
+  color: @font-color;
+  font-size: 12px;
+  margin-top: @bottom-instance;
+}
+
+/*..............login start.....................*/
+.form-group {
+  margin-top: 25px;
+  .group-item {
+    margin-bottom: 20px;
+  }
+}
+
+.submit-group {
+  .clear-float;
+  .register, .recover {
+    color: @bg-color;
+    padding: 8px 0;
+    float: left;
+  }
+  .register:hover, .recover:hover {
+    text-decoration: underline;
+  }
+  .register {
+    padding-right: 15px;
+    border-right: 1px dotted #e9e9e9;
+  }
+  .recover {
+    padding-left: 15px;
+  }
+  .submit-btn {
+    border: none;
+    float: right;
+  }
+}
+
+/*..............login end.......................*/
+/*..............typography start................*/
+.two-column {
+  .clear-float;
+  .columns-one {
+    float: left;
+    width: 47%;
+  }
+  .last-columns {
+    margin-left: 6%;
+  }
+}
+
+.three-column {
+  .clear-float;
+  .columns-one {
+    float: left;
+    width: 29.3333333%;
+  }
+  .center-columns {
+    margin-left: 6%;
+    margin-right: 6%;
+  }
+}
+
+.table-style {
+  width: 100%;
+  border-left: 1px solid @table-border-color;
+  border-top: 1px solid @table-border-color;
+  border-spacing: 0;
+  thead th {
+    text-align: center;
+    font-weight: bold;
+    color: @black-color;
+    height: 48px;
+    line-height: 48px;
+    background-color: @table-border-color;;
+  }
+  tbody td {
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    color: @table-color;
+  }
+  thead th, tbody td {
+    border-right: 1px solid @table-border-color;
+    border-bottom: 1px solid @table-border-color;
+  }
+}
+
+.circle-img {
+  width: 50px;
+  height: 50px;
+  .border-radius(50%);
+  border: 1px solid @table-border-color;
+}
+
+.quotes {
+  .quotes-border {
+    border-left: 3px solid @table-border-color;
+    margin-left: 70px;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  blockquote {
+    margin-left: 25px;
+    cite {
+      font-weight: bold;
+      color: #999;
+    }
+  }
+}
+
+.alert-box {
+  position: relative;
+  padding: 15px;
+  .border-radius(3px);
+  .alert-icon {
+    float: left;
+    color: @black-color;
+    font-size: 1rem;
+  }
+  .alert-border {
+    margin-left: 25px;
+    padding-left: 10px;
+    padding-right: 5px;
+    border-left: 1px solid rgba(0, 0, 0, 0.18);
+    color: @black-color;
+  }
+  .alert-close {
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    font-size: 1.3rem;
+    color: @black-color;
+  }
+}
+
+.alert-warning {
+  background-color: #ffb24d;
+}
+
+.alert-danger {
+  background-color: #f25849;
+}
+
+.alert-success {
+  background-color: #65c178;
+}
+
+.alert-info {
+  background-color: #4baad3;
+}
+
+.hidelighted-text {
+  color: @white-color;
+  padding: 1px 3px;
+}
+
+.hidelighted-default {
+  background-color: #E4755A;
+}
+
+.hidelighted-orange {
+  background-color: #ffb24d;
+}
+
+.hidelighted-red {
+  background-color: #f25849;
+}
+
+.hidelighted-green {
+  background-color: #65c178;
+}
+
+.hidelighted-info {
+  background-color: #4baad3;
+}
+
+.hidelighted-pink {
+  background-color: #fe5d83;
+}
+
+.fa-mobile {
+  font-size: 1.5rem !important;
+}
+
+/*..............typography end..................*/
+/*.............. gallery-wrapper Begin ..................*/
+.gallery-wrapper {
+  .galleryCurrent {
+    width: 100%;
+    height: auto;
+    border: 3px solid @line-color;
+    margin-bottom: 25px;
+  }
+  .gallery-items {
+    height: 55px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    text-align: center;
+    .gallery-item {
+      cursor: pointer;
+      display: inline-block;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+    .item-img.thumbCurrent {
+      border-color: @bg-color;
+    }
+    .item-img {
+      width: 60px;
+      height: 48px;
+      border: 3px solid @line-color;
+    }
+  }
+}
+
+/*.............. gallery-wrapper end ..................*/
+/*.............. portfolio start ..................*/
+.portfolio-wrapper {
+  .portfolio-img {
+    width: 100%;
+  }
+  .portfolio-border {
+    border: 3px solid @line-color;
+  }
+  .portfolio-con {
+    background-color: #f9f9f9;
+    padding: 10px;
+  }
+}
+
+.portfolio-btn-outer {
+  background-color: #f9f9f9;
+  .clear-float;
+  .portfolio-btn {
+    background-color: #E9E9E9;
+    padding: 8px 12px;
+    color: #666;
+    vertical-align: top;
+  }
+  .fa {
+    font-size: 16px;
+    color: @bg-color;
+  }
+}
+
+.pagination {
+  .clear-float;
+  .page-item {
+    float: left;
+    margin-right: 10px;
+    background-color: #f0f0f0;
+    .border-radius(4px);
+    a {
+      display: block;
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+      text-align: center;
+      color: #999;
+      letter-spacing: 0;
+    }
+  }
+  .page-item.curPage {
+    background-color: @black-color;
+    a {
+      color: @white-color;
+    }
+  }
+}
+/*-----expand start------*/
+  .expand-wrapper {
+    display: none;
+    background-color: rgba(255, 255, 255, .9);
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+  }
+  .expand-box {
+    display: none;
+    position: absolute;
+    left: 50%;
+    z-index: 3;
+    width: 80%;
+    margin-left: -40%;
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+    .expand-img, .loading {
+      margin-left: -6px;
+      width: 100%;
+      border: 6px solid @black-color;
+      .border-radius(6px);
+      background-color: @black-color;
+    }
+    .loading-img {
+      .position-center;
+      width: 16px;
+      height: 11px;
+      margin-left: -6px;
+      margin-top: -5.5px;
+    }
+    .expand-close {
+      cursor: pointer;
+      position: absolute;
+      top: 6px;
+      right: 0px;
+      display: block;
+      width: 24px;
+      height: 24px;
+      line-height: 19px;
+      font-size: 1.3rem;
+      text-align: center;
+      border-bottom-left-radius: 6px;
+      background-color: @black-color;
+      color: @white-color;
+    }
+  }
+/*-----expand end------*/
+.portfolio-two{
+  .clear-float;
+  .two-portfolio-item{
+    float: left;
+    width: 42.5%;
+    margin-top: 30px;
+    &:nth-child(even){
+      margin-left: 15%;
+    }
+    .two-item-img{
+      width: 100%;
+      display: block;
+    }
+    .item-h4{
+      display:block;
+      background-color: #f9f9f9;
+      text-align: center;
+      font-weight: normal;
+      padding: 10px 0;
+    }
+  }
+}
+/*---------面包屑帅选 start--------*/
+.filter-crumbs{
+  .clear-float;
+   li{
+     float: left;
+     padding-right: 8px;
+     a{
+       color: #999;
+     }
+     a.crumbs-active{
+       color: @bg-color;
+     }
+     &:after{
+       padding-left: 8px;
+       content: '/';
+       color: #EFECEC;
+     }
+   }
+  .last-crumbs:after{
+    content: '';
+  }
+}
+/*---------面包屑帅选 end--------*/
+/*.............. portfolio end ..................*/
+/*.............. blog start ....................*/
+.blog-item{
+  .blog-img{
+    width: 100%;
+  }
+  .blog-btn-outer{
+    background-color: #f6f6f6;
+    .clear-float;
+    .date-text{
+      padding: 8px 12px;
+      display: block;
+    }
+    .date-icon{
+      font-size: 1rem;
+      color: #666;
+      padding-right: 10px;
+    }
+    .blog-date{
+      color: #666;
+    }
+    .blog-btn{
+      background-color: #F0F0F0;
+      padding: 8px 12px;
+      color: #666;
+      vertical-align: top;
+    }
+    .read-more-icon {
+      font-size: 16px;
+      color: @bg-color;
+    }
+  }
+}
+/*.............. blog end ....................*/
+/*.............. singlePost start..............*/
+.date-btn-outer{
+  background-color: #f6f6f6;
+  .clear-float;
+  .date-text{
+    padding: 8px 12px;
+    display: block;
+  }
+  .date-icon{
+    font-size: 1rem;
+    color: #666;
+    padding-right: 10px;
+  }
+  .blog-date{
+    color: #666;
+  }
+  .date-edit{
+    padding: 8px 12px;
+    color: @bg-color;
+    vertical-align: top;
+  }
+  .edit-icon {
+    font-size: 16px;
+    color: @black-color;
+  }
+}
+.post-btn-outer{
+  .clear-float;
+  .post-btn{
+    padding: 8px 12px;
+    color: @bg-color;
+    vertical-align: top;
+  }
+}
+.post-comment-item{
+  .post-comment-info{
+    margin-left:70px;
+    padding-top: 20px;
+    .com-link{
+      color: @bg-color;
+    }
+  }
+}
+/*............... singlePost end...............*/
+/*............... contact start...............*/
+.we-address{
+  height: 160px;
+  text-align: center;
+  background-color: #ddd;
+  .error-img{
+    width: 60px;
+    height: 70px;
+    margin-top: 37px;
+  }
+}
+.friends-outer{
+  text-align: center;
+ .friends-btn{
+   padding: 10px 13px;
+   margin: 0 5px;
+   background-color: #f3f3f3;
+   .fa{
+     vertical-align: middle;
+     font-size: 1rem;
+     color: @black-color;
+   }
+ }
+}
+/*............... contact end...............*/
+/*----------------------content end----------------------*/
+/*----------------------footer start----------------------*/
+.copyright {
+  .head-footer-distance;
+  color: @white-color;
+  font-size: @small-font;
+}
+
+/*----------------------footer end----------------------*/
+
